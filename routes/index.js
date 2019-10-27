@@ -3,8 +3,16 @@ const express = require('express');
 const router = express.Router();
 router.get('/', (req, res) => {
   let obj = {
-    'nome': 'Edson Shideki Kokado',
-    'idade': 53
+    nome: req.query.nome,
+    idade: req.query.idade,
+    mostrar: true,
+    ingredientes: [
+      {nome: 'Arroz', qt: '20g'},
+      {nome: 'Macarrão', qt: '100g'},
+      {nome: 'Feijão', qt: '30g'},
+    ],
+    interesses: ['node', 'js', 'css'],
+    teste: '<strong>testando negrito</strong>'
   }
   res.render('home', obj);
 });
