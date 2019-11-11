@@ -1,5 +1,5 @@
 {{> header}}
-<h1>Página home</h1>
+<h1>Página home: {{testando}}</h1>
 
 <h1>Seja bem vindo(a)</h1>
 <p>Qualquer mensagem</p>
