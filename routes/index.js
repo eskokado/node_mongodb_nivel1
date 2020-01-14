@@ -1,21 +1,28 @@
 const express = require('express');
+const homeController = require('../controllers/homeController');
+const userController = require('../controllers/userController');
 
 const router = express.Router();
-router.get('/', (req, res) => {
-  let obj = {
-    nome: req.query.nome,
-    idade: req.query.idade,
-    mostrar: true,
-    ingredientes: [
-      {nome: 'Arroz', qt: '20g'},
-      {nome: 'Macarrão', qt: '100g'},
-      {nome: 'Feijão', qt: '30g'},
-    ],
-    interesses: ['node', 'js', 'css'],
-    teste: '<strong>testando negrito</strong>'
-  }
-  res.render('home', obj);
-});
+router.get('/', homeController.index);
+router.get('/users/login', userController.login);
+router.get('/users/register', userController.register);
+
+
+// router.get('/', (req, res) => {
+//   let obj = {
+//     nome: req.query.nome,
+//     idade: req.query.idade,
+//     mostrar: true,
+//     ingredientes: [
+//       {nome: 'Arroz', qt: '20g'},
+//       {nome: 'Macarrão', qt: '100g'},
+//       {nome: 'Feijão', qt: '30g'},
+//     ],
+//     interesses: ['node', 'js', 'css'],
+//     teste: '<strong>testando negrito</strong>'
+//   }
+//   res.render('home', obj);
+// });
 
 // router.get('/', (req, res) => {
 //   // res.json(req.query);
